@@ -1,17 +1,19 @@
-# vite-react-tailwind-template
+# 🔍 Emoji
 
-[![build](https://github.com/remarkablemark/vite-react-tailwind-template/actions/workflows/build.yml/badge.svg)](https://github.com/remarkablemark/vite-react-tailwind-template/actions/workflows/build.yml)
-[![test](https://github.com/remarkablemark/vite-react-tailwind-template/actions/workflows/test.yml/badge.svg)](https://github.com/remarkablemark/vite-react-tailwind-template/actions/workflows/test.yml)
+[![build](https://github.com/remarkablemark/emoji/actions/workflows/build.yml/badge.svg)](https://github.com/remarkablemark/emoji/actions/workflows/build.yml)
+[![test](https://github.com/remarkablemark/emoji/actions/workflows/test.yml/badge.svg)](https://github.com/remarkablemark/emoji/actions/workflows/test.yml)
 
-Vite React Tailwind Template
+Emoji finder:
+
+- [Emoji](https://remarkablemark.org/emoji/)
 
 ## Install
 
 Clone the repository:
 
 ```sh
-git clone https://github.com/remarkablemark/vite-react-tailwind-template.git
-cd vite-react-tailwind-template
+git clone https://github.com/remarkablemark/emoji.git
+cd emoji
 ```
 
 Install the dependencies:
