@@ -2,6 +2,7 @@
 
 [![build](https://github.com/remarkablemark/emoji/actions/workflows/build.yml/badge.svg)](https://github.com/remarkablemark/emoji/actions/workflows/build.yml)
 [![test](https://github.com/remarkablemark/emoji/actions/workflows/test.yml/badge.svg)](https://github.com/remarkablemark/emoji/actions/workflows/test.yml)
+[![codecov](https://codecov.io/gh/remarkablemark/emoji/graph/badge.svg?token=uE5trKAaay)](https://codecov.io/gh/remarkablemark/emoji)
 
 Emoji finder:
 
