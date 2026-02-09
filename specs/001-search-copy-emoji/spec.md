@@ -15,6 +15,7 @@
 - Q: What search matching strategy should be used? → A: Substring match (e.g., typing "art" matches "heart", "party", "art")
 - Q: How should the default view display emoji when no search term is entered? → A: Emoji grouped by category with section headers (scrollable, all visible)
 - Q: What is the click target for copying an emoji? → A: Both the emoji character/tile and a "Copy" text button are clickable to copy
+- Q: How large should each emoji be displayed in the grid? → A: Large (~48px/3rem) for easy readability and tappability
 
 ## User Scenarios & Testing _(mandatory)_
 
@@ -92,6 +93,7 @@ A user wants to explore emoji without a specific keyword in mind. They can brows
 - **FR-010**: System MUST display each emoji with its name or description for accessibility
 - **FR-011**: System MUST be keyboard-navigable (users can tab through emoji and press Enter to copy)
 - **FR-012**: System MUST be responsive and usable on both desktop and mobile screen sizes
+- **FR-013**: System MUST display each emoji at a large size (~48px/3rem) for easy readability and touch interaction
 
 ### Key Entities _(include if feature involves data)_
 
