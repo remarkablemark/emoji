@@ -51,21 +51,21 @@
 
 ### Implementation for User Story 1
 
-- [ ] T009 [P] [US1] Create SearchBar component with types in src/components/SearchBar/SearchBar.tsx and src/components/SearchBar/SearchBar.types.ts
-- [ ] T010 [P] [US1] Create SearchBar barrel export in src/components/SearchBar/index.ts
-- [ ] T011 [US1] Create SearchBar tests in src/components/SearchBar/SearchBar.test.tsx
-- [ ] T012 [P] [US1] Create NoResults component in src/components/NoResults/NoResults.tsx
-- [ ] T013 [P] [US1] Create NoResults barrel export in src/components/NoResults/index.ts
-- [ ] T014 [US1] Create NoResults tests in src/components/NoResults/NoResults.test.tsx
-- [ ] T015 [P] [US1] Create EmojiCard component with types in src/components/EmojiCard/EmojiCard.tsx and src/components/EmojiCard/EmojiCard.types.ts (emoji tile displaying character + name, without copy button — copy added in US2)
-- [ ] T016 [P] [US1] Create EmojiCard barrel export in src/components/EmojiCard/index.ts
-- [ ] T017 [US1] Create EmojiCard tests in src/components/EmojiCard/EmojiCard.test.tsx
-- [ ] T018 [P] [US1] Create EmojiGrid component with types in src/components/EmojiGrid/EmojiGrid.tsx and src/components/EmojiGrid/EmojiGrid.types.ts (responsive grid with category section headers, fluid columns)
-- [ ] T019 [P] [US1] Create EmojiGrid barrel export in src/components/EmojiGrid/index.ts
-- [ ] T020 [US1] Create EmojiGrid tests in src/components/EmojiGrid/EmojiGrid.test.tsx
-- [ ] T021 [US1] Add keyboard navigation to EmojiGrid and EmojiCard: tab through emoji tiles, Enter to activate, proper focus management in src/components/EmojiGrid/EmojiGrid.tsx and src/components/EmojiCard/EmojiCard.tsx
-- [ ] T022 [US1] Update App component to integrate SearchBar + EmojiGrid + NoResults with useEmojiSearch hook in src/components/App/App.tsx
-- [ ] T023 [US1] Update App tests for search functionality in src/components/App/App.test.tsx
+- [x] T009 [P] [US1] Create SearchBar component with types in src/components/SearchBar/SearchBar.tsx and src/components/SearchBar/SearchBar.types.ts
+- [x] T010 [P] [US1] Create SearchBar barrel export in src/components/SearchBar/index.ts
+- [x] T011 [US1] Create SearchBar tests in src/components/SearchBar/SearchBar.test.tsx
+- [x] T012 [P] [US1] Create NoResults component in src/components/NoResults/NoResults.tsx
+- [x] T013 [P] [US1] Create NoResults barrel export in src/components/NoResults/index.ts
+- [x] T014 [US1] Create NoResults tests in src/components/NoResults/NoResults.test.tsx
+- [x] T015 [P] [US1] Create EmojiCard component with types in src/components/EmojiCard/EmojiCard.tsx and src/components/EmojiCard/EmojiCard.types.ts (emoji tile displaying character + name, without copy button — copy added in US2)
+- [x] T016 [P] [US1] Create EmojiCard barrel export in src/components/EmojiCard/index.ts
+- [x] T017 [US1] Create EmojiCard tests in src/components/EmojiCard/EmojiCard.test.tsx
+- [x] T018 [P] [US1] Create EmojiGrid component with types in src/components/EmojiGrid/EmojiGrid.tsx and src/components/EmojiGrid/EmojiGrid.types.ts (responsive grid with category section headers, fluid columns)
+- [x] T019 [P] [US1] Create EmojiGrid barrel export in src/components/EmojiGrid/index.ts
+- [x] T020 [US1] Create EmojiGrid tests in src/components/EmojiGrid/EmojiGrid.test.tsx
+- [x] T021 [US1] Add keyboard navigation to EmojiGrid and EmojiCard: tab through emoji tiles, Enter to activate, proper focus management in src/components/EmojiGrid/EmojiGrid.tsx and src/components/EmojiCard/EmojiCard.tsx
+- [x] T022 [US1] Update App component to integrate SearchBar + EmojiGrid + NoResults with useEmojiSearch hook in src/components/App/App.tsx
+- [x] T023 [US1] Update App tests for search functionality in src/components/App/App.test.tsx
 
 **Checkpoint**: User Story 1 complete — search, display, no-results, and responsive grid all working. Run `npm run test:ci` to verify.
 
