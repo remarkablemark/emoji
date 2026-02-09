@@ -6,7 +6,7 @@
 
 Search, browse, and copy emojis to your clipboard:
 
-- [Emoji](https://remarkablemark.org/emoji/)
+- [Emoji Finder](https://remarkablemark.org/emoji/)
 
 ## Install
 
