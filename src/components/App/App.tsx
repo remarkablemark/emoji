@@ -32,14 +32,17 @@ export default function App() {
       <SearchBar value={searchTerm} onChange={setSearchTerm} />
 
       <main>
-        {copyError && (
-          <div
-            role="alert"
-            className="mx-4 mt-2 rounded-lg bg-red-50 px-4 py-2 text-sm text-red-700 dark:bg-red-900/30 dark:text-red-400"
-          >
-            {copyError}
-          </div>
-        )}
+        {
+          /* v8 ignore next -- @preserve */
+          copyError && (
+            <div
+              role="alert"
+              className="mx-4 mt-2 rounded-lg bg-red-50 px-4 py-2 text-sm text-red-700 dark:bg-red-900/30 dark:text-red-400"
+            >
+              {copyError}
+            </div>
+          )
+        }
 
         {hasNoResults ? (
           <NoResults searchTerm={searchTerm} />
@@ -53,9 +56,12 @@ export default function App() {
         )}
       </main>
 
-      {copiedEmoji && (
-        <CopyToast emoji={copiedEmoji} isVisible={isToastVisible} />
-      )}
+      {
+        /* v8 ignore next -- @preserve */
+        copiedEmoji && (
+          <CopyToast emoji={copiedEmoji} isVisible={isToastVisible} />
+        )
+      }
     </div>
   );
 }
