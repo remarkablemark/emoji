@@ -1,4 +1,5 @@
 import { useCallback, useState } from 'react';
+import { CopyToast } from 'src/components/CopyToast';
 import { EmojiGrid } from 'src/components/EmojiGrid';
 import { NoResults } from 'src/components/NoResults';
 import { SearchBar } from 'src/components/SearchBar';
@@ -9,7 +10,8 @@ export default function App() {
   const [searchTerm, setSearchTerm] = useState('');
   const { filteredEmoji, filteredCategories, hasNoResults, isSearching } =
     useEmojiSearch(searchTerm, null);
-  const { copyToClipboard } = useCopyToClipboard();
+  const { copiedEmoji, copyError, isToastVisible, copyToClipboard } =
+    useCopyToClipboard();
 
   /* v8 ignore next -- @preserve */
   const handleEmojiClick = useCallback(
@@ -30,6 +32,15 @@ export default function App() {
       <SearchBar value={searchTerm} onChange={setSearchTerm} />
 
       <main>
+        {copyError && (
+          <div
+            role="alert"
+            className="mx-4 mt-2 rounded-lg bg-red-50 px-4 py-2 text-sm text-red-700 dark:bg-red-900/30 dark:text-red-400"
+          >
+            {copyError}
+          </div>
+        )}
+
         {hasNoResults ? (
           <NoResults searchTerm={searchTerm} />
         ) : (
@@ -41,6 +52,10 @@ export default function App() {
           />
         )}
       </main>
+
+      {copiedEmoji && (
+        <CopyToast emoji={copiedEmoji} isVisible={isToastVisible} />
+      )}
     </div>
   );
 }

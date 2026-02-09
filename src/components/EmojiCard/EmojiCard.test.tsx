@@ -24,24 +24,45 @@ describe('EmojiCard', () => {
     expect(screen.getByText('grinning face')).toBeInTheDocument();
   });
 
-  it('has an accessible label', () => {
+  it('renders a Copy text button', () => {
+    render(<EmojiCard {...defaultProps} />);
+    expect(
+      screen.getByRole('button', { name: 'Copy grinning face' }),
+    ).toBeInTheDocument();
+  });
+
+  it('has an accessible label on the emoji button', () => {
     render(<EmojiCard {...defaultProps} />);
     expect(
       screen.getByRole('button', { name: 'grinning face, click to copy' }),
     ).toBeInTheDocument();
   });
 
-  it('calls onCopy with the emoji when clicked', async () => {
+  it('calls onCopy when emoji tile is clicked', async () => {
     const user = userEvent.setup();
     render(<EmojiCard {...defaultProps} />);
 
-    await user.click(screen.getByRole('button'));
+    await user.click(
+      screen.getByRole('button', { name: 'grinning face, click to copy' }),
+    );
     expect(defaultProps.onCopy).toHaveBeenCalledWith('😀');
   });
 
-  it('is focusable via keyboard', () => {
+  it('calls onCopy when Copy button is clicked', async () => {
+    const user = userEvent.setup();
     render(<EmojiCard {...defaultProps} />);
-    const button = screen.getByRole('button');
+
+    await user.click(
+      screen.getByRole('button', { name: 'Copy grinning face' }),
+    );
+    expect(defaultProps.onCopy).toHaveBeenCalledWith('😀');
+  });
+
+  it('emoji button is focusable via keyboard', () => {
+    render(<EmojiCard {...defaultProps} />);
+    const button = screen.getByRole('button', {
+      name: 'grinning face, click to copy',
+    });
     button.focus();
     expect(button).toHaveFocus();
   });
