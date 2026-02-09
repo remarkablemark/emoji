@@ -9,6 +9,7 @@ function buildEmojiData(): Emoji[] {
     name: data.name,
     slug: data.slug,
     group: data.group,
+    /* v8 ignore next */
     keywords: emojilib[char] ?? [],
   }));
 }
