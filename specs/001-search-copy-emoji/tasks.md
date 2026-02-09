@@ -63,8 +63,9 @@
 - [ ] T018 [P] [US1] Create EmojiGrid component with types in src/components/EmojiGrid/EmojiGrid.tsx and src/components/EmojiGrid/EmojiGrid.types.ts (responsive grid with category section headers, fluid columns)
 - [ ] T019 [P] [US1] Create EmojiGrid barrel export in src/components/EmojiGrid/index.ts
 - [ ] T020 [US1] Create EmojiGrid tests in src/components/EmojiGrid/EmojiGrid.test.tsx
-- [ ] T021 [US1] Update App component to integrate SearchBar + EmojiGrid + NoResults with useEmojiSearch hook in src/components/App/App.tsx
-- [ ] T022 [US1] Update App tests for search functionality in src/components/App/App.test.tsx
+- [ ] T021 [US1] Add keyboard navigation to EmojiGrid and EmojiCard: tab through emoji tiles, Enter to activate, proper focus management in src/components/EmojiGrid/EmojiGrid.tsx and src/components/EmojiCard/EmojiCard.tsx
+- [ ] T022 [US1] Update App component to integrate SearchBar + EmojiGrid + NoResults with useEmojiSearch hook in src/components/App/App.tsx
+- [ ] T023 [US1] Update App tests for search functionality in src/components/App/App.test.tsx
 
 **Checkpoint**: User Story 1 complete — search, display, no-results, and responsive grid all working. Run `npm run test:ci` to verify.
 
@@ -78,13 +79,13 @@
 
 ### Implementation for User Story 2
 
-- [ ] T023 [P] [US2] Create CopyToast component with types in src/components/CopyToast/CopyToast.tsx and src/components/CopyToast/CopyToast.types.ts (positioned near clicked emoji, fades after 1.5s)
-- [ ] T024 [P] [US2] Create CopyToast barrel export in src/components/CopyToast/index.ts
-- [ ] T025 [US2] Create CopyToast tests in src/components/CopyToast/CopyToast.test.tsx
-- [ ] T026 [US2] Update EmojiCard to add "Copy" text button and onClick handler using useCopyToClipboard in src/components/EmojiCard/EmojiCard.tsx
-- [ ] T027 [US2] Update EmojiCard tests for copy-on-click and copy button behavior in src/components/EmojiCard/EmojiCard.test.tsx
-- [ ] T028 [US2] Integrate CopyToast into App component with toast state management in src/components/App/App.tsx
-- [ ] T029 [US2] Update App tests for copy + toast integration in src/components/App/App.test.tsx
+- [ ] T024 [P] [US2] Create CopyToast component with types in src/components/CopyToast/CopyToast.tsx and src/components/CopyToast/CopyToast.types.ts (positioned near clicked emoji, fades after 1.5s)
+- [ ] T025 [P] [US2] Create CopyToast barrel export in src/components/CopyToast/index.ts
+- [ ] T026 [US2] Create CopyToast tests in src/components/CopyToast/CopyToast.test.tsx
+- [ ] T027 [US2] Update EmojiCard to add "Copy" text button and onClick handler using useCopyToClipboard; display error message on clipboard failure (FR-007) in src/components/EmojiCard/EmojiCard.tsx
+- [ ] T028 [US2] Update EmojiCard tests for copy-on-click, copy button, and clipboard error handling in src/components/EmojiCard/EmojiCard.test.tsx
+- [ ] T029 [US2] Integrate CopyToast into App component with toast state management in src/components/App/App.tsx
+- [ ] T030 [US2] Update App tests for copy + toast integration in src/components/App/App.test.tsx
 
 **Checkpoint**: User Story 2 complete — click-to-copy and "Copy" button both work, toast appears and fades. Run `npm run test:ci` to verify.
 
@@ -98,11 +99,11 @@
 
 ### Implementation for User Story 3
 
-- [ ] T030 [P] [US3] Create CategoryBar component with types in src/components/CategoryBar/CategoryBar.tsx and src/components/CategoryBar/CategoryBar.types.ts (horizontally scrollable on mobile, "All" + category buttons)
-- [ ] T031 [P] [US3] Create CategoryBar barrel export in src/components/CategoryBar/index.ts
-- [ ] T032 [US3] Create CategoryBar tests in src/components/CategoryBar/CategoryBar.test.tsx
-- [ ] T033 [US3] Integrate CategoryBar into App component with selectedCategory state in src/components/App/App.tsx
-- [ ] T034 [US3] Update App tests for category filtering and combined search+category in src/components/App/App.test.tsx
+- [ ] T031 [P] [US3] Create CategoryBar component with types in src/components/CategoryBar/CategoryBar.tsx and src/components/CategoryBar/CategoryBar.types.ts (horizontally scrollable on mobile, "All" + category buttons)
+- [ ] T032 [P] [US3] Create CategoryBar barrel export in src/components/CategoryBar/index.ts
+- [ ] T033 [US3] Create CategoryBar tests in src/components/CategoryBar/CategoryBar.test.tsx
+- [ ] T034 [US3] Integrate CategoryBar into App component with selectedCategory state in src/components/App/App.tsx
+- [ ] T035 [US3] Update App tests for category filtering and combined search+category in src/components/App/App.test.tsx
 
 **Checkpoint**: User Story 3 complete — category browsing works independently and combined with search. Run `npm run test:ci` to verify.
 
@@ -112,12 +113,12 @@
 
 **Purpose**: Accessibility, responsiveness, keyboard navigation, and final quality gates
 
-- [ ] T035 [P] Add ARIA labels and roles to all interactive components (SearchBar, CategoryBar, EmojiCard, CopyToast) across src/components/
-- [ ] T036 [P] Implement keyboard navigation: tab through emoji grid, Enter to copy in src/components/EmojiGrid/EmojiGrid.tsx and src/components/EmojiCard/EmojiCard.tsx
-- [ ] T037 Verify responsive layout: sticky search, fluid grid columns (8-10 desktop, 5-6 mobile), scrollable category bar on mobile across src/components/
-- [ ] T038 Update page title and meta description in index.html
-- [ ] T039 Run all quality gates: `npm run lint`, `npm run lint:tsc`, `npm run test:ci`
-- [ ] T040 Verify quickstart.md steps work end-to-end
+- [ ] T036 [P] Add ARIA labels and roles to all interactive components (SearchBar, CategoryBar, EmojiCard, CopyToast) across src/components/
+- [ ] T037 [P] Add TSDoc comments to all exported hooks, data adapter functions, and component props in src/hooks/, src/data/, and src/types/
+- [ ] T038 Verify responsive layout: sticky search, fluid grid columns (8-10 desktop, 5-6 mobile), scrollable category bar on mobile across src/components/
+- [ ] T039 Update page title and meta description in index.html
+- [ ] T040 Run all quality gates: `npm run lint`, `npm run lint:tsc`, `npm run test:ci`
+- [ ] T041 Verify quickstart.md steps work end-to-end
 
 ---
 
@@ -149,8 +150,8 @@
 - T002 + T003 can run in parallel (types + data adapter are independent files)
 - T005/T006 + T007/T008 can run in parallel (two independent hooks)
 - T009/T010 + T012/T013 + T015/T016 + T018/T019 can all run in parallel (independent components)
-- T023/T024 can run in parallel with T026 prep work
-- T030/T031 can start as soon as Phase 2 is done (parallel with US2)
+- T024/T025 can run in parallel with T027 prep work
+- T031/T032 can start as soon as Phase 2 is done (parallel with US2)
 
 ---
 
@@ -169,9 +170,12 @@ Task T014: "NoResults tests"
 Task T017: "EmojiCard tests"
 Task T020: "EmojiGrid tests"
 
+# Then keyboard navigation:
+Task T021: "Add keyboard nav to EmojiGrid and EmojiCard"
+
 # Finally, integration:
-Task T021: "Update App to integrate all US1 components"
-Task T022: "Update App tests"
+Task T022: "Update App to integrate all US1 components"
+Task T023: "Update App tests"
 ```
 
 ---
@@ -182,7 +186,7 @@ Task T022: "Update App tests"
 
 1. Complete Phase 1: Setup (T001-T004)
 2. Complete Phase 2: Foundational hooks (T005-T008)
-3. Complete Phase 3: User Story 1 — Search (T009-T022)
+3. Complete Phase 3: User Story 1 — Search (T009-T023)
 4. **STOP and VALIDATE**: Run `npm run test:ci` — search works, grid displays, responsive layout
 5. Deploy/demo if ready — users can already search and browse emoji
 

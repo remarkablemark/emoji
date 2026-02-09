@@ -10,7 +10,7 @@ Build an emoji search and copy tool as a React static website. Users can search 
 ## Technical Context
 
 **Language/Version**: TypeScript 5 (strict mode)
-**Primary Dependencies**: React 19, Vite 7, Tailwind CSS 4, npm emoji data package (to be determined in research)
+**Primary Dependencies**: React 19, Vite 7, Tailwind CSS 4, unicode-emoji-json + emojilib (emoji data + search keywords)
 **Storage**: N/A (static client-side app, emoji data bundled from npm package)
 **Testing**: Vitest 4 + @testing-library/react + @testing-library/user-event (100% coverage required)
 **Target Platform**: Modern browsers (Chrome, Firefox, Safari, Edge) — desktop and mobile

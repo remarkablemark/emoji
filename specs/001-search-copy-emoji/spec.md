@@ -71,11 +71,11 @@ A user wants to explore emoji without a specific keyword in mind. They can brows
 
 ### Edge Cases
 
-- What happens when the user searches using emoji characters instead of text keywords?
-- How does the system handle very rapid typing (debounce/throttle search input)?
-- What happens when the user searches with special characters or punctuation?
-- How does the system behave when the clipboard write fails (e.g., browser permissions denied)?
-- What happens on mobile devices where clipboard behavior differs?
+- What happens when the user searches using emoji characters instead of text keywords? → Substring match applies to emoji names and keywords; emoji characters as input will simply return no matches (acceptable behavior).
+- How does the system handle very rapid typing (debounce/throttle search input)? → No debounce needed; filtering ~1,800 items via Array.filter completes in <1ms, so real-time filtering on every keystroke is performant.
+- What happens when the user searches with special characters or punctuation? → Substring match handles this naturally; special characters simply won't match any emoji names/keywords, returning no results.
+- How does the system behave when the clipboard write fails (e.g., browser permissions denied)? → FR-007: a helpful error message is displayed to the user. The Clipboard API requires a secure context (HTTPS or localhost).
+- What happens on mobile devices where clipboard behavior differs? → The Clipboard API (navigator.clipboard.writeText) is supported on all target mobile browsers. Same error handling as desktop applies (FR-007).
 - How does the system handle emoji that have skin tone or gender variants? → Only the default (yellow) variant is displayed; skin tone and gender variants are excluded from the grid.
 
 ## Requirements _(mandatory)_
