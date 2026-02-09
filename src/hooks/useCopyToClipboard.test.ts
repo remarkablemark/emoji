@@ -8,8 +8,10 @@ describe('useCopyToClipboard', () => {
   beforeEach(() => {
     vi.useFakeTimers();
     mockWriteText.mockResolvedValue(undefined);
-    Object.assign(navigator, {
-      clipboard: { writeText: mockWriteText },
+    Object.defineProperty(navigator, 'clipboard', {
+      value: { writeText: mockWriteText },
+      writable: true,
+      configurable: true,
     });
   });
 
