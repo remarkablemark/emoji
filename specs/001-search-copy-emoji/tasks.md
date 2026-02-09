@@ -99,11 +99,11 @@
 
 ### Implementation for User Story 3
 
-- [ ] T031 [P] [US3] Create CategoryBar component with types in src/components/CategoryBar/CategoryBar.tsx and src/components/CategoryBar/CategoryBar.types.ts (horizontally scrollable on mobile, "All" + category buttons)
-- [ ] T032 [P] [US3] Create CategoryBar barrel export in src/components/CategoryBar/index.ts
-- [ ] T033 [US3] Create CategoryBar tests in src/components/CategoryBar/CategoryBar.test.tsx
-- [ ] T034 [US3] Integrate CategoryBar into App component with selectedCategory state in src/components/App/App.tsx
-- [ ] T035 [US3] Update App tests for category filtering and combined search+category in src/components/App/App.test.tsx
+- [x] T031 [P] [US3] Create CategoryBar component with types in src/components/CategoryBar/CategoryBar.tsx and src/components/CategoryBar/CategoryBar.types.ts (horizontally scrollable on mobile, "All" + category buttons)
+- [x] T032 [P] [US3] Create CategoryBar barrel export in src/components/CategoryBar/index.ts
+- [x] T033 [US3] Create CategoryBar tests in src/components/CategoryBar/CategoryBar.test.tsx
+- [x] T034 [US3] Integrate CategoryBar into App component with selectedCategory state in src/components/App/App.tsx
+- [x] T035 [US3] Update App tests for category filtering and combined search+category in src/components/App/App.test.tsx
 
 **Checkpoint**: User Story 3 complete — category browsing works independently and combined with search. Run `npm run test:ci` to verify.
 
