@@ -11,6 +11,7 @@
 
 - Q: How is the emoji data sourced and stored? → A: Use an existing npm package that provides emoji data (e.g., `emoji-datasource`)
 - Q: How should skin tone / gender emoji variants be handled? → A: Show only the default (yellow) emoji, no variant picker
+- Q: What style of visual confirmation after copying? → A: Tooltip/toast near the clicked emoji showing "Copied!" that fades after 1-2 seconds
 
 ## User Scenarios & Testing _(mandatory)_
 
@@ -81,7 +82,7 @@ A user wants to explore emoji without a specific keyword in mind. They can brows
 - **FR-003**: System MUST display all available emoji when no search term is entered
 - **FR-004**: System MUST show a "no results found" message when no emoji match the search term
 - **FR-005**: System MUST copy the emoji character to the user's clipboard when the user clicks on an emoji
-- **FR-006**: System MUST display a brief visual confirmation after a successful copy action
+- **FR-006**: System MUST display a tooltip/toast near the clicked emoji showing "Copied!" that fades after 1-2 seconds
 - **FR-007**: System MUST display a helpful error message if the clipboard copy fails
 - **FR-008**: System MUST allow users to browse emoji by category
 - **FR-009**: System MUST allow combining category filter with keyword search
