@@ -16,6 +16,7 @@
 - Q: How should the default view display emoji when no search term is entered? → A: Emoji grouped by category with section headers (scrollable, all visible)
 - Q: What is the click target for copying an emoji? → A: Both the emoji character/tile and a "Copy" text button are clickable to copy
 - Q: How large should each emoji be displayed in the grid? → A: Large (~48px/3rem) for easy readability and tappability
+- Q: How should the mobile responsive layout behave? → A: Fluid grid columns (fewer on mobile), sticky full-width search at top, horizontally scrollable category bar on mobile
 
 ## User Scenarios & Testing _(mandatory)_
 
@@ -92,7 +93,7 @@ A user wants to explore emoji without a specific keyword in mind. They can brows
 - **FR-009**: System MUST allow combining category filter with keyword search
 - **FR-010**: System MUST display each emoji with its name or description for accessibility
 - **FR-011**: System MUST be keyboard-navigable (users can tab through emoji and press Enter to copy)
-- **FR-012**: System MUST be responsive and usable on both desktop and mobile screen sizes
+- **FR-012**: System MUST be responsive with fluid grid columns (8-10 on desktop, 5-6 on mobile), a sticky full-width search field at the top, and a horizontally scrollable category bar on small screens
 - **FR-013**: System MUST display each emoji at a large size (~48px/3rem) for easy readability and touch interaction
 
 ### Key Entities _(include if feature involves data)_
