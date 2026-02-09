@@ -12,6 +12,7 @@
 - Q: How is the emoji data sourced and stored? → A: Use an existing npm package that provides emoji data (e.g., `emoji-datasource`)
 - Q: How should skin tone / gender emoji variants be handled? → A: Show only the default (yellow) emoji, no variant picker
 - Q: What style of visual confirmation after copying? → A: Tooltip/toast near the clicked emoji showing "Copied!" that fades after 1-2 seconds
+- Q: What search matching strategy should be used? → A: Substring match (e.g., typing "art" matches "heart", "party", "art")
 
 ## User Scenarios & Testing _(mandatory)_
 
@@ -78,7 +79,7 @@ A user wants to explore emoji without a specific keyword in mind. They can brows
 ### Functional Requirements
 
 - **FR-001**: System MUST display a search input field prominently on the page
-- **FR-002**: System MUST filter and display emoji matching the user's search keyword in real time as they type
+- **FR-002**: System MUST filter and display emoji using case-insensitive substring matching against emoji names and keywords in real time as the user types
 - **FR-003**: System MUST display all available emoji when no search term is entered
 - **FR-004**: System MUST show a "no results found" message when no emoji match the search term
 - **FR-005**: System MUST copy the emoji character to the user's clipboard when the user clicks on an emoji
