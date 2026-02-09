@@ -113,12 +113,12 @@
 
 **Purpose**: Accessibility, responsiveness, keyboard navigation, and final quality gates
 
-- [ ] T036 [P] Add ARIA labels and roles to all interactive components (SearchBar, CategoryBar, EmojiCard, CopyToast) across src/components/
-- [ ] T037 [P] Add TSDoc comments to all exported hooks, data adapter functions, and component props in src/hooks/, src/data/, and src/types/
-- [ ] T038 Verify responsive layout: sticky search, fluid grid columns (8-10 desktop, 5-6 mobile), scrollable category bar on mobile across src/components/
-- [ ] T039 Update page title and meta description in index.html
-- [ ] T040 Run all quality gates: `npm run lint`, `npm run lint:tsc`, `npm run test:ci`
-- [ ] T041 Verify quickstart.md steps work end-to-end
+- [x] T036 [P] Add ARIA labels and roles to all interactive components (SearchBar, CategoryBar, EmojiCard, CopyToast) across src/components/
+- [x] T037 [P] Add TSDoc comments to all exported hooks, data adapter functions, and component props in src/hooks/, src/data/, and src/types/
+- [x] T038 Verify responsive layout: sticky search, fluid grid columns (8-10 desktop, 5-6 mobile), scrollable category bar on mobile across src/components/
+- [x] T039 Update page title and meta description in index.html
+- [x] T040 Run all quality gates: `npm run lint`, `npm run lint:tsc`, `npm run test:ci`
+- [x] T041 Verify quickstart.md steps work end-to-end
 
 ---
 
