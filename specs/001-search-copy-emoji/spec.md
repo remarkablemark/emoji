@@ -10,6 +10,7 @@
 ### Session 2026-02-08
 
 - Q: How is the emoji data sourced and stored? → A: Use an existing npm package that provides emoji data (e.g., `emoji-datasource`)
+- Q: How should skin tone / gender emoji variants be handled? → A: Show only the default (yellow) emoji, no variant picker
 
 ## User Scenarios & Testing _(mandatory)_
 
@@ -69,7 +70,7 @@ A user wants to explore emoji without a specific keyword in mind. They can brows
 - What happens when the user searches with special characters or punctuation?
 - How does the system behave when the clipboard write fails (e.g., browser permissions denied)?
 - What happens on mobile devices where clipboard behavior differs?
-- How does the system handle emoji that have skin tone or gender variants?
+- How does the system handle emoji that have skin tone or gender variants? → Only the default (yellow) variant is displayed; skin tone and gender variants are excluded from the grid.
 
 ## Requirements _(mandatory)_
 
