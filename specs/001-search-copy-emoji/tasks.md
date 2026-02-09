@@ -79,13 +79,13 @@
 
 ### Implementation for User Story 2
 
-- [ ] T024 [P] [US2] Create CopyToast component with types in src/components/CopyToast/CopyToast.tsx and src/components/CopyToast/CopyToast.types.ts (positioned near clicked emoji, fades after 1.5s)
-- [ ] T025 [P] [US2] Create CopyToast barrel export in src/components/CopyToast/index.ts
-- [ ] T026 [US2] Create CopyToast tests in src/components/CopyToast/CopyToast.test.tsx
-- [ ] T027 [US2] Update EmojiCard to add "Copy" text button and onClick handler using useCopyToClipboard; display error message on clipboard failure (FR-007) in src/components/EmojiCard/EmojiCard.tsx
-- [ ] T028 [US2] Update EmojiCard tests for copy-on-click, copy button, and clipboard error handling in src/components/EmojiCard/EmojiCard.test.tsx
-- [ ] T029 [US2] Integrate CopyToast into App component with toast state management in src/components/App/App.tsx
-- [ ] T030 [US2] Update App tests for copy + toast integration in src/components/App/App.test.tsx
+- [x] T024 [P] [US2] Create CopyToast component with types in src/components/CopyToast/CopyToast.tsx and src/components/CopyToast/CopyToast.types.ts (positioned near clicked emoji, fades after 1.5s)
+- [x] T025 [P] [US2] Create CopyToast barrel export in src/components/CopyToast/index.ts
+- [x] T026 [US2] Create CopyToast tests in src/components/CopyToast/CopyToast.test.tsx
+- [x] T027 [US2] Update EmojiCard to add "Copy" text button and onClick handler using useCopyToClipboard; display error message on clipboard failure (FR-007) in src/components/EmojiCard/EmojiCard.tsx
+- [x] T028 [US2] Update EmojiCard tests for copy-on-click, copy button, and clipboard error handling in src/components/EmojiCard/EmojiCard.test.tsx
+- [x] T029 [US2] Integrate CopyToast into App component with toast state management in src/components/App/App.tsx
+- [x] T030 [US2] Update App tests for copy + toast integration in src/components/App/App.test.tsx
 
 **Checkpoint**: User Story 2 complete — click-to-copy and "Copy" button both work, toast appears and fades. Run `npm run test:ci` to verify.
 
