@@ -14,7 +14,9 @@ describe('App component', () => {
 
   it('displays emoji grouped by category by default', () => {
     render(<App />);
-    expect(screen.getByText('Smileys & Emotion')).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', { level: 2, name: 'Smileys & Emotion' }),
+    ).toBeInTheDocument();
     expect(screen.getByText('😀')).toBeInTheDocument();
   });
 
@@ -24,7 +26,9 @@ describe('App component', () => {
 
     await user.type(screen.getByRole('searchbox'), 'grinning');
     expect(screen.getByText('😀')).toBeInTheDocument();
-    expect(screen.queryByText('Smileys & Emotion')).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole('heading', { level: 2, name: 'Smileys & Emotion' }),
+    ).not.toBeInTheDocument();
   });
 
   it('shows no results message for nonsense search', async () => {
@@ -41,9 +45,63 @@ describe('App component', () => {
 
     const searchbox = screen.getByRole('searchbox');
     await user.type(searchbox, 'grinning');
-    expect(screen.queryByText('Smileys & Emotion')).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole('heading', { level: 2, name: 'Smileys & Emotion' }),
+    ).not.toBeInTheDocument();
 
     await user.clear(searchbox);
-    expect(screen.getByText('Smileys & Emotion')).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', { level: 2, name: 'Smileys & Emotion' }),
+    ).toBeInTheDocument();
+  });
+
+  it('renders the category bar', () => {
+    render(<App />);
+    expect(
+      screen.getByRole('navigation', { name: 'Emoji categories' }),
+    ).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'All' })).toBeInTheDocument();
+  });
+
+  it('filters emoji by category when a category is selected', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+
+    await user.click(screen.getByRole('button', { name: 'Animals & Nature' }));
+    expect(
+      screen.getByRole('heading', { level: 2, name: 'Animals & Nature' }),
+    ).toBeInTheDocument();
+    expect(
+      screen.queryByRole('heading', { level: 2, name: 'Smileys & Emotion' }),
+    ).not.toBeInTheDocument();
+  });
+
+  it('shows all categories when "All" is clicked after filtering', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+
+    await user.click(screen.getByRole('button', { name: 'Animals & Nature' }));
+    expect(
+      screen.queryByRole('heading', { level: 2, name: 'Smileys & Emotion' }),
+    ).not.toBeInTheDocument();
+
+    await user.click(screen.getByRole('button', { name: 'All' }));
+    expect(
+      screen.getByRole('heading', { level: 2, name: 'Smileys & Emotion' }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', { level: 2, name: 'Animals & Nature' }),
+    ).toBeInTheDocument();
+  });
+
+  it('combines category filter with search keyword', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+
+    await user.click(screen.getByRole('button', { name: 'Animals & Nature' }));
+    await user.type(screen.getByRole('searchbox'), 'dog');
+
+    expect(screen.getByText('🐶')).toBeInTheDocument();
+    expect(screen.queryByText('😀')).not.toBeInTheDocument();
   });
 });

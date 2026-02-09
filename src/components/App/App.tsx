@@ -1,15 +1,18 @@
 import { useCallback, useState } from 'react';
+import { CategoryBar } from 'src/components/CategoryBar';
 import { CopyToast } from 'src/components/CopyToast';
 import { EmojiGrid } from 'src/components/EmojiGrid';
 import { NoResults } from 'src/components/NoResults';
 import { SearchBar } from 'src/components/SearchBar';
+import { categoryNames } from 'src/data/emoji';
 import { useCopyToClipboard } from 'src/hooks/useCopyToClipboard';
 import { useEmojiSearch } from 'src/hooks/useEmojiSearch';
 
 export default function App() {
   const [searchTerm, setSearchTerm] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const { filteredEmoji, filteredCategories, hasNoResults, isSearching } =
-    useEmojiSearch(searchTerm, null);
+    useEmojiSearch(searchTerm, selectedCategory);
   const { copiedEmoji, copyError, isToastVisible, copyToClipboard } =
     useCopyToClipboard();
 
@@ -30,6 +33,12 @@ export default function App() {
       </header>
 
       <SearchBar value={searchTerm} onChange={setSearchTerm} />
+
+      <CategoryBar
+        categories={categoryNames}
+        selectedCategory={selectedCategory}
+        onSelectCategory={setSelectedCategory}
+      />
 
       <main>
         {
