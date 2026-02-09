@@ -34,10 +34,10 @@
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T005 Implement useEmojiSearch hook (search + category filter logic) in src/hooks/useEmojiSearch.ts
-- [ ] T006 Create unit tests for useEmojiSearch hook in src/hooks/useEmojiSearch.test.ts
-- [ ] T007 [P] Implement useCopyToClipboard hook (clipboard write + toast state) in src/hooks/useCopyToClipboard.ts
-- [ ] T008 [P] Create unit tests for useCopyToClipboard hook in src/hooks/useCopyToClipboard.test.ts
+- [x] T005 Implement useEmojiSearch hook (search + category filter logic) in src/hooks/useEmojiSearch.ts
+- [x] T006 Create unit tests for useEmojiSearch hook in src/hooks/useEmojiSearch.test.ts
+- [x] T007 [P] Implement useCopyToClipboard hook (clipboard write + toast state) in src/hooks/useCopyToClipboard.ts
+- [x] T008 [P] Create unit tests for useCopyToClipboard hook in src/hooks/useCopyToClipboard.test.ts
 
 **Checkpoint**: Foundation ready — hooks tested and working, user story implementation can begin
 
