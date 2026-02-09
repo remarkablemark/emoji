@@ -19,10 +19,10 @@
 
 **Purpose**: Install dependencies and create shared types and data layer
 
-- [ ] T001 Install emoji data dependencies: `npm install unicode-emoji-json emojilib`
-- [ ] T002 [P] Create shared TypeScript interfaces (Emoji, Category) in src/types/emoji.types.ts
-- [ ] T003 [P] Create emoji data adapter merging unicode-emoji-json + emojilib in src/data/emoji.ts
-- [ ] T004 Create unit tests for emoji data adapter in src/data/emoji.test.ts
+- [x] T001 Install emoji data dependencies: `npm install unicode-emoji-json emojilib`
+- [x] T002 [P] Create shared TypeScript interfaces (Emoji, Category) in src/types/emoji.types.ts
+- [x] T003 [P] Create emoji data adapter merging unicode-emoji-json + emojilib in src/data/emoji.ts
+- [x] T004 Create unit tests for emoji data adapter in src/data/emoji.test.ts
 
 **Checkpoint**: Shared types and emoji data layer ready — all user stories can now consume emoji data
 
