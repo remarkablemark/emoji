@@ -5,6 +5,12 @@
 **Status**: Draft  
 **Input**: User description: "search and copy emoji"
 
+## Clarifications
+
+### Session 2026-02-08
+
+- Q: How is the emoji data sourced and stored? → A: Use an existing npm package that provides emoji data (e.g., `emoji-datasource`)
+
 ## User Scenarios & Testing _(mandatory)_
 
 ### User Story 1 - Search for an Emoji by Keyword (Priority: P1)
@@ -84,8 +90,8 @@ A user wants to explore emoji without a specific keyword in mind. They can brows
 
 ### Key Entities _(include if feature involves data)_
 
-- **Emoji**: A single emoji entry with a character (the Unicode emoji), a name/description (human-readable label), a list of keywords/aliases (searchable terms), and a category (grouping for browsing)
-- **Category**: A named grouping of emoji (e.g., "Smileys & People", "Animals & Nature", "Objects") used for browsing and filtering
+- **Emoji**: A single emoji entry with a character (the Unicode emoji), a name/description (human-readable label), a list of keywords/aliases (searchable terms), and a category (grouping for browsing). Data sourced from an existing npm emoji data package.
+- **Category**: A named grouping of emoji (e.g., "Smileys & People", "Animals & Nature", "Objects") used for browsing and filtering. Categories derived from the npm package's built-in categorization.
 
 ## Success Criteria _(mandatory)_
 
