@@ -4,18 +4,6 @@ import userEvent from '@testing-library/user-event';
 import App from '.';
 
 describe('App component', () => {
-  beforeEach(() => {
-    Object.defineProperty(navigator, 'clipboard', {
-      value: { writeText: vi.fn().mockResolvedValue(undefined) },
-      writable: true,
-      configurable: true,
-    });
-  });
-
-  afterEach(() => {
-    vi.restoreAllMocks();
-  });
-
   it('renders the heading and search bar', () => {
     render(<App />);
     expect(

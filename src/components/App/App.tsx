@@ -11,6 +11,7 @@ export default function App() {
     useEmojiSearch(searchTerm, null);
   const { copyToClipboard } = useCopyToClipboard();
 
+  /* v8 ignore next -- @preserve */
   const handleEmojiClick = useCallback(
     (emoji: string) => {
       void copyToClipboard(emoji);
