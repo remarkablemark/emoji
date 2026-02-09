@@ -14,6 +14,7 @@
 - Q: What style of visual confirmation after copying? → A: Tooltip/toast near the clicked emoji showing "Copied!" that fades after 1-2 seconds
 - Q: What search matching strategy should be used? → A: Substring match (e.g., typing "art" matches "heart", "party", "art")
 - Q: How should the default view display emoji when no search term is entered? → A: Emoji grouped by category with section headers (scrollable, all visible)
+- Q: What is the click target for copying an emoji? → A: Both the emoji character/tile and a "Copy" text button are clickable to copy
 
 ## User Scenarios & Testing _(mandatory)_
 
@@ -36,7 +37,7 @@ A user visits the app wanting to find a specific emoji. They type a keyword (e.g
 
 ### User Story 2 - Copy an Emoji to Clipboard (Priority: P2)
 
-A user finds the emoji they want from the search results (or the full list) and clicks on it. The emoji character is copied to their clipboard. A brief visual confirmation (e.g., a tooltip or flash) indicates the copy was successful. The user can then paste the emoji into any other application.
+A user finds the emoji they want from the search results (or the full list) and copies it by either clicking directly on the emoji character or clicking a "Copy" text button associated with the emoji. The emoji character is copied to their clipboard. A brief visual confirmation indicates the copy was successful. The user can then paste the emoji into any other application.
 
 **Why this priority**: Copying is the primary action users take after finding an emoji. Without copy functionality, the search results have limited utility. This completes the core user workflow.
 
@@ -44,7 +45,7 @@ A user finds the emoji they want from the search results (or the full list) and 
 
 **Acceptance Scenarios**:
 
-1. **Given** emoji search results are displayed, **When** the user clicks on an emoji, **Then** the emoji character is copied to the clipboard
+1. **Given** emoji search results are displayed, **When** the user clicks on the emoji character or the "Copy" button, **Then** the emoji character is copied to the clipboard
 2. **Given** the user clicks on an emoji, **When** the copy succeeds, **Then** a brief visual confirmation is shown to the user
 3. **Given** the user clicks on an emoji, **When** the clipboard is not available (e.g., insecure context), **Then** a helpful error message is displayed
 
@@ -83,7 +84,7 @@ A user wants to explore emoji without a specific keyword in mind. They can brows
 - **FR-002**: System MUST filter and display emoji using case-insensitive substring matching against emoji names and keywords in real time as the user types
 - **FR-003**: System MUST display all available emoji grouped by category with section headers when no search term is entered
 - **FR-004**: System MUST show a "no results found" message when no emoji match the search term
-- **FR-005**: System MUST copy the emoji character to the user's clipboard when the user clicks on an emoji
+- **FR-005**: System MUST copy the emoji character to the user's clipboard when the user clicks on the emoji character/tile or the associated "Copy" text button
 - **FR-006**: System MUST display a tooltip/toast near the clicked emoji showing "Copied!" that fades after 1-2 seconds
 - **FR-007**: System MUST display a helpful error message if the clipboard copy fails
 - **FR-008**: System MUST allow users to browse emoji by category

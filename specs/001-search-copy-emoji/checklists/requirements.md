@@ -36,9 +36,10 @@
 - 12 functional requirements defined, all testable
 - 6 success criteria defined, all measurable and technology-agnostic
 - 6 edge cases identified covering input handling, clipboard failures, mobile, and emoji variants
-- Clarification session completed (2026-02-08): 5 questions asked and resolved
+- Clarification session 1 completed (2026-02-08): 5 questions asked and resolved
   1. Data source: npm emoji data package
   2. Skin tone variants: default only, no variant picker
   3. Copy confirmation: tooltip/toast near clicked emoji, fades after 1-2s
   4. Search matching: case-insensitive substring match
   5. Default view: emoji grouped by category with section headers
+- Clarification session 2 completed (2026-02-08): 1 question asked and resolved 6. Copy click target: both emoji character/tile and "Copy" text button
