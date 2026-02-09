@@ -1,0 +1,1 @@
+export { EmojiCard } from './EmojiCard';
