@@ -8,7 +8,7 @@ import { categoryNames } from 'src/data/emoji';
 import { useCopyToClipboard } from 'src/hooks/useCopyToClipboard';
 import { useEmojiSearch } from 'src/hooks/useEmojiSearch';
 
-export default function App() {
+export function App() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const { filteredEmoji, filteredCategories, hasNoResults, isSearching } =

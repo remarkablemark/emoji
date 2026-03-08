@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import App from '.';
+import { App } from '.';
 
 vi.mock('src/data/emoji', () => {
   const allEmoji = [
