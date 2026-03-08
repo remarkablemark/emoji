@@ -32,7 +32,7 @@ export function EmojiGrid({
     <div role="grid" aria-label="Emoji by category">
       {filteredCategories.map((category) => (
         <section key={category.name} aria-label={category.name}>
-          <h2 className="sticky top-[60px] z-[5] bg-gray-50 px-4 py-2 text-sm font-semibold text-gray-700 dark:bg-gray-800 dark:text-gray-300">
+          <h2 className="sticky top-[66px] z-10 bg-gray-50 px-4 py-2 text-sm font-semibold text-gray-700 dark:bg-gray-800 dark:text-gray-300">
             {category.name}
           </h2>
           <div className="grid grid-cols-5 gap-2 px-4 py-2 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10">
