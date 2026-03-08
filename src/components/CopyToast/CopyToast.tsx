@@ -10,7 +10,7 @@ export function CopyToast({ emoji, isVisible }: CopyToastProps) {
         isVisible ? 'opacity-100' : 'opacity-0'
       }`}
     >
-      Copied {emoji}!
+      Copied {emoji}
     </div>
   );
 }

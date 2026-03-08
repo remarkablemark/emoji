@@ -5,7 +5,7 @@ import { CopyToast } from './CopyToast';
 describe('CopyToast', () => {
   it('displays the copied emoji', () => {
     render(<CopyToast emoji="😀" isVisible={true} />);
-    expect(screen.getByText('Copied 😀!')).toBeInTheDocument();
+    expect(screen.getByText('Copied 😀')).toBeInTheDocument();
   });
 
   it('has role status for accessibility', () => {
