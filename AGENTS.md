@@ -24,16 +24,15 @@ You're an expert engineer for this React app.
   - Prettier with Tailwind plugin
   - React Compiler (babel-plugin-react-compiler)
 - **File Structure:**
-  - `public/` – app assets
-  - `src/` – app code
+  - `public/` – assets
+  - `src/` – features, types, tests
 
-## Commands you can use
+## Commands
 
 ### Build & Development
 
-- **Build:** `npm run build` (TypeScript compile + Vite build, outputs to dist/)
+- **Build:** `npm run build` (Vite build, outputs to `dist/`)
 - **Start:** `npm start` (starts dev server at http://localhost:5173, opens browser)
-- **Preview:** `npm run preview` (preview production build locally)
 
 ### Code Quality
 
@@ -43,26 +42,11 @@ You're an expert engineer for this React app.
 
 ### Testing
 
-- **Coverage:** `npm run test:ci` (run tests with coverage report, requires 100% coverage)
+- **Coverage:** `npm run test:ci` (run tests with coverage report)
 - **Single test file:** `npm test -- path/to/test.test.tsx` (run specific test file)
 - **Single test with coverage:** `npm run test:ci -- path/to/test.test.tsx`
 
-## Code Style Guidelines
-
-### Import Organization (Enforced by eslint-plugin-simple-import-sort)
-
-1. External libraries (react, react-dom, etc.)
-2. Internal modules (absolute imports starting with src/)
-3. Relative imports (./, ../)
-
-```tsx
-// ✅ Correct order
-import { useState } from 'react';
-import userEvent from '@testing-library/user-event';
-import App from 'src/components/App';
-import brands from './brands';
-import type { User } from './types';
-```
+## Code Style
 
 ### TypeScript Rules
 
@@ -70,7 +54,6 @@ import type { User } from './types';
 - **Prefer interfaces over types** for object shapes
 - **Use proper event types**: `React.MouseEvent`, `React.FormEvent`, etc.
 - **Component props**: Define interfaces with clear, descriptive property names
-- **Vitest globals** - include `vitest/globals` in tsconfig for global test functions
 
 ### Naming Conventions
 
@@ -90,6 +73,7 @@ import type { User } from './types';
 - **Destructure props** in function signature for clarity
 - **Semantic HTML** - use proper tags (header, nav, main, button, etc.)
 - **Accessibility first** - include proper ARIA labels, alt text, keyboard navigation
+- **No manual optimization** - React Compiler handles memoization automatically, avoid `useMemo` and `useCallback`
 
 ### CSS & Styling
 
@@ -107,13 +91,16 @@ import type { User } from './types';
 
 ### Testing Standards
 
-- **100% coverage required** - all statements, branches, functions, and lines
+- **TDD** - tests MUST be written first and validated before implementation (red, green, refactor)
+- **100% coverage required** - all statements, branches, functions, and lines (except for barrel exports)
+- **Do not test barrel exports** - index.ts files are barrel exports and should not have dedicated tests
 - **Testing Library** - use @testing-library/react for component testing
 - **User interactions** - use @testing-library/user-event for simulating user actions
 - **Mock external dependencies** - mock API calls, browser APIs, etc.
 - **Descriptive test names** - should clearly state what is being tested
-- **Vitest globals** - use `vi.fn()`, `vi.mock()`, `vi.clearAllMocks()`
+- **Vitest globals** - use `vi.fn()`, `vi.mock()`, `vi.clearAllMocks()`; no need to import test functions
 - **Test setup** - global test environment configured in `vite.config.mts` with `globals: true`
+- **Coverage exclusions** - Use `/* v8 ignore next -- @preserve */` for a single line that is not testable or `/* v8 ignore start */` and `/* v8 ignore end */` for multiple lines that are not testable
 
 ### Code Quality Rules
 
@@ -136,18 +123,16 @@ src/components/ComponentName/
 
 ### Import Aliases
 
-- `src/` maps to absolute imports (`src/components/App` → `src/components/App`)
+- `src/` maps to absolute imports
 
 ## Boundaries
 
 - ✅ **Always:** Write to `src/`; run lint, type check, and tests before commits; follow naming conventions
-- ⚠️ **Ask first:** Adding dependencies, modifying CI/CD config, changing build configuration
+- ⚠️ **Ask first:** Adding dependencies, modifying CI/CD config, changing build configuration, editing dot files
 - 🚫 **Never:** Commit secrets or API keys, edit `node_modules/`, disable ESLint rules, commit with failing tests
 
 ## Development Notes
 
-- **Vite Integration:** This project uses Vite for dev server and build
-- **Modern React:** Uses React 19 with concurrent features and the new React Compiler
 - **ESM Only:** Project is configured as ES modules (`"type": "module"` in package.json)
 - **Git Hooks:** Husky + lint-staged enforce code quality on commits
-- **Commit Messages:** Conventional commits enforced by commitlint
+- **Commit Messages:** Conventional Commits enforced by commitlint
