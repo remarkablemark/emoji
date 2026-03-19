@@ -18,7 +18,7 @@
     "emojilib": "4.0.2",
     "react": "19.2.4",
     "react-dom": "19.2.4",
-    "tailwindcss": "4.2.1",
+    "tailwindcss": "4.2.2",
     "unicode-emoji-json": "0.8.0"
   },
   "devDependencies": {
