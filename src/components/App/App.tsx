@@ -16,13 +16,14 @@ export function App() {
   const { copiedEmoji, copyError, isToastVisible, copyToClipboard } =
     useCopyToClipboard();
 
-  /* v8 ignore next -- @preserve */
+  /* v8 ignore start */
   const handleEmojiClick = useCallback(
     (emoji: string) => {
       void copyToClipboard(emoji);
     },
     [copyToClipboard],
   );
+  /* v8 ignore stop */
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
@@ -42,7 +43,7 @@ export function App() {
 
       <main>
         {
-          /* v8 ignore next -- @preserve */
+          /* v8 ignore start */
           copyError && (
             <div
               role="alert"
@@ -51,6 +52,7 @@ export function App() {
               {copyError}
             </div>
           )
+          /* v8 ignore stop */
         }
 
         {hasNoResults ? (
@@ -66,10 +68,11 @@ export function App() {
       </main>
 
       {
-        /* v8 ignore next -- @preserve */
+        /* v8 ignore start */
         copiedEmoji && (
           <CopyToast emoji={copiedEmoji} isVisible={isToastVisible} />
         )
+        /* v8 ignore stop */
       }
     </div>
   );
