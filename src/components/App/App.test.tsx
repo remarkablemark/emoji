@@ -1,7 +1,9 @@
-import { render, screen } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { App } from '.';
+
+const mockWriteText = vi.fn<(text: string) => Promise<void>>();
 
 vi.mock('src/data/emoji', () => {
   const allEmoji = [
@@ -47,6 +49,21 @@ vi.mock('src/data/emoji', () => {
 });
 
 describe('App component', () => {
+  beforeEach(() => {
+    vi.useRealTimers();
+    mockWriteText.mockReset();
+    mockWriteText.mockResolvedValue(undefined);
+    Object.defineProperty(navigator, 'clipboard', {
+      value: { writeText: mockWriteText },
+      writable: true,
+      configurable: true,
+    });
+  });
+
+  afterEach(() => {
+    vi.useRealTimers();
+  });
+
   it('renders the heading and search bar', () => {
     render(<App />);
     expect(
@@ -146,5 +163,43 @@ describe('App component', () => {
 
     expect(screen.getByText('🐶')).toBeInTheDocument();
     expect(screen.queryByText('😀')).not.toBeInTheDocument();
+  });
+
+  it('shows and clears the copy toast after a successful copy', async () => {
+    vi.useFakeTimers();
+    render(<App />);
+
+    screen
+      .getByRole('button', { name: 'grinning face, click to copy' })
+      .click();
+
+    await act(async () => {
+      await Promise.resolve();
+    });
+
+    expect(mockWriteText).toHaveBeenCalledWith('😀');
+    expect(screen.getByRole('status')).toHaveTextContent('Copied 😀');
+
+    await act(async () => {
+      await vi.advanceTimersByTimeAsync(1500);
+    });
+
+    expect(screen.queryByRole('status')).not.toBeInTheDocument();
+  });
+
+  it('shows an error alert when clipboard copy fails', async () => {
+    mockWriteText.mockRejectedValueOnce(new Error('Permission denied'));
+    render(<App />);
+
+    screen.getByRole('button', { name: 'Copy grinning face' }).click();
+
+    await act(async () => {
+      await Promise.resolve();
+    });
+
+    expect(screen.getByRole('alert')).toHaveTextContent(
+      'Failed to copy. Please check clipboard permissions.',
+    );
+    expect(screen.queryByRole('status')).not.toBeInTheDocument();
   });
 });

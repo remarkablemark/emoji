@@ -24,7 +24,6 @@ describe('useCopyToClipboard', () => {
     const { result } = renderHook(() => useCopyToClipboard());
     expect(result.current.copiedEmoji).toBeNull();
     expect(result.current.copyError).toBeNull();
-    expect(result.current.isToastVisible).toBe(false);
   });
 
   it('copies emoji to clipboard and shows toast', async () => {
@@ -36,7 +35,6 @@ describe('useCopyToClipboard', () => {
 
     expect(mockWriteText).toHaveBeenCalledWith('😀');
     expect(result.current.copiedEmoji).toBe('😀');
-    expect(result.current.isToastVisible).toBe(true);
     expect(result.current.copyError).toBeNull();
   });
 
@@ -47,13 +45,10 @@ describe('useCopyToClipboard', () => {
       await result.current.copyToClipboard('😀');
     });
 
-    expect(result.current.isToastVisible).toBe(true);
-
     act(() => {
       vi.advanceTimersByTime(1500);
     });
 
-    expect(result.current.isToastVisible).toBe(false);
     expect(result.current.copiedEmoji).toBeNull();
   });
 
@@ -70,7 +65,6 @@ describe('useCopyToClipboard', () => {
       'Failed to copy. Please check clipboard permissions.',
     );
     expect(result.current.copiedEmoji).toBeNull();
-    expect(result.current.isToastVisible).toBe(false);
   });
 
   it('clears previous toast when copying a new emoji', async () => {
@@ -87,7 +81,6 @@ describe('useCopyToClipboard', () => {
     });
 
     expect(result.current.copiedEmoji).toBe('❤️');
-    expect(result.current.isToastVisible).toBe(true);
   });
 
   it('clears error on successful copy after failure', async () => {

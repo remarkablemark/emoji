@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useState } from 'react';
 import { CategoryBar } from 'src/components/CategoryBar';
 import { CopyToast } from 'src/components/CopyToast';
 import { EmojiGrid } from 'src/components/EmojiGrid';
@@ -13,17 +13,7 @@ export function App() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const { filteredEmoji, filteredCategories, hasNoResults, isSearching } =
     useEmojiSearch(searchTerm, selectedCategory);
-  const { copiedEmoji, copyError, isToastVisible, copyToClipboard } =
-    useCopyToClipboard();
-
-  /* v8 ignore start */
-  const handleEmojiClick = useCallback(
-    (emoji: string) => {
-      void copyToClipboard(emoji);
-    },
-    [copyToClipboard],
-  );
-  /* v8 ignore stop */
+  const { copiedEmoji, copyError, copyToClipboard } = useCopyToClipboard();
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
@@ -42,18 +32,14 @@ export function App() {
       />
 
       <main>
-        {
-          /* v8 ignore start */
-          copyError && (
-            <div
-              role="alert"
-              className="mx-4 mt-2 rounded-lg bg-red-50 px-4 py-2 text-sm text-red-700 dark:bg-red-900/30 dark:text-red-400"
-            >
-              {copyError}
-            </div>
-          )
-          /* v8 ignore stop */
-        }
+        {copyError && (
+          <div
+            role="alert"
+            className="mx-4 mt-2 rounded-lg bg-red-50 px-4 py-2 text-sm text-red-700 dark:bg-red-900/30 dark:text-red-400"
+          >
+            {copyError}
+          </div>
+        )}
 
         {hasNoResults ? (
           <NoResults searchTerm={searchTerm} />
@@ -62,18 +48,14 @@ export function App() {
             filteredEmoji={filteredEmoji}
             filteredCategories={filteredCategories}
             isSearching={isSearching}
-            onEmojiClick={handleEmojiClick}
+            onEmojiClick={(emoji: string) => {
+              void copyToClipboard(emoji);
+            }}
           />
         )}
       </main>
 
-      {
-        /* v8 ignore start */
-        copiedEmoji && (
-          <CopyToast emoji={copiedEmoji} isVisible={isToastVisible} />
-        )
-        /* v8 ignore stop */
-      }
+      {copiedEmoji && <CopyToast emoji={copiedEmoji} />}
     </div>
   );
 }
