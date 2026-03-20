@@ -14,7 +14,7 @@ description: Expert technical engineer for this React app
 - **Tech Stack:**
   - React 19 (UI library)
   - TypeScript 5 (strict mode)
-  - Vite 7 (build tool)
+  - Vite 8 (build tool)
   - Vitest 4 (testing framework)
   - Node.js 24
   - Tailwind CSS 4
@@ -96,7 +96,7 @@ description: Expert technical engineer for this React app
 - **User interactions** - use @testing-library/user-event for simulating user actions
 - **Mock external dependencies** - mock API calls, browser APIs, etc.
 - **Descriptive test names** - should clearly state what is being tested
-- **Vitest globals** - use `vi.fn()`, `vi.mock()`, `vi.clearAllMocks()`; no need to import test functions
+- **Vitest globals** - use `vi.fn()`, `vi.mock()`, `vi.clearAllMocks()`; no need to import from `vitest`
 - **Test setup** - global test environment configured in `vite.config.mts` with `globals: true`
 - **Coverage exclusions** - Use `/* v8 ignore next -- @preserve */` for a single line that is not testable or `/* v8 ignore start */` and `/* v8 ignore stop */` for multiple lines that are not testable
 
@@ -122,9 +122,3 @@ src/components/ComponentName/
 ### Import Aliases
 
 - `src/` maps to absolute imports
-
-## Development Notes
-
-- **ESM Only:** Project is configured as ES modules (`"type": "module"` in package.json)
-- **Git Hooks:** Husky + lint-staged enforce code quality on commits
-- **Commit Messages:** Conventional Commits enforced by commitlint
