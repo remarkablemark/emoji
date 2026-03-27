@@ -22,7 +22,7 @@
   Follow-up TODOs: none
 -->
 
-# Emoji Finder Constitution
+# Emoji Search Constitution
 
 ## Core Principles
 
@@ -126,7 +126,7 @@ simple. Complexity must be justified.
 ## Governance
 
 - This constitution supersedes all other development practices for
-  the Emoji Finder project.
+  the Emoji Search project.
 - Amendments MUST be documented with a version bump, rationale, and
   migration plan when applicable.
 - Version increments follow Semantic Versioning:

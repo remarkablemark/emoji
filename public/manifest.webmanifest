@@ -1,7 +1,7 @@
 {
-  "name": "Emoji Finder",
+  "name": "Emoji Search",
   "short_name": "Emoji",
-  "description": "Search, browse, and copy emojis to your clipboard. Filter by category or keyword.",
+  "description": "Search, browse, and copy emoji to your clipboard. Filter by category or keyword.",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#ffffff",

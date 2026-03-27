@@ -67,7 +67,7 @@ describe('App component', () => {
   it('renders the heading and search bar', () => {
     render(<App />);
     expect(
-      screen.getByRole('heading', { level: 1, name: 'Emoji Finder' }),
+      screen.getByRole('heading', { level: 1, name: 'Emoji Search' }),
     ).toBeInTheDocument();
     expect(screen.getByRole('searchbox')).toBeInTheDocument();
   });
