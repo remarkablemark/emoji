@@ -16,9 +16,9 @@ export function App() {
   const { copiedEmoji, copyError, copyToClipboard } = useCopyToClipboard();
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900">
-      <header className="bg-white px-4 py-4 dark:bg-gray-900">
-        <h1 className="text-center text-2xl font-bold text-gray-900 dark:text-white">
+    <div className="min-h-screen dark:bg-gray-900">
+      <header className="px-4 py-4 dark:bg-gray-900">
+        <h1 className="text-center text-3xl font-bold text-gray-900 dark:text-white">
           Emoji Search
         </h1>
       </header>

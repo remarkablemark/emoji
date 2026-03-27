@@ -3,7 +3,7 @@ import type { SearchBarProps } from './SearchBar.types';
 /** Search input field for filtering emoji by keyword */
 export function SearchBar({ value, onChange }: SearchBarProps) {
   return (
-    <div className="sticky top-0 z-10 bg-white px-4 py-3 dark:bg-gray-900">
+    <div className="sticky top-0 z-10 px-4 py-3 dark:bg-gray-900">
       <label htmlFor="emoji-search" className="sr-only">
         Search emoji
       </label>

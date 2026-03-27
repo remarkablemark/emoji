@@ -9,7 +9,7 @@ export function CategoryBar({
   return (
     <nav
       aria-label="Emoji categories"
-      className="overflow-x-auto border-b border-gray-200 bg-white px-4 py-2 dark:border-gray-700 dark:bg-gray-900"
+      className="overflow-x-auto border-b border-gray-200 px-4 py-2 dark:border-gray-700 dark:bg-gray-900"
     >
       <div className="flex gap-2">
         <button
