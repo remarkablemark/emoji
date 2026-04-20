@@ -15,7 +15,7 @@
     "test:watch": "vitest"
   },
   "dependencies": {
-    "emojilib": "4.0.2",
+    "emojilib": "4.0.3",
     "react": "19.2.5",
     "react-dom": "19.2.5",
     "tailwindcss": "4.2.2",
