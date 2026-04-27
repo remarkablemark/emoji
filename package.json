@@ -22,7 +22,7 @@
     "unicode-emoji-json": "0.9.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "20.5.0",
+    "@commitlint/cli": "20.5.2",
     "@commitlint/config-conventional": "20.5.0",
     "@eslint/compat": "2.0.5",
     "@eslint/js": "10.0.1",
