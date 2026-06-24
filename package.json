@@ -22,8 +22,8 @@
     "unicode-emoji-json": "0.9.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "21.0.2",
-    "@commitlint/config-conventional": "21.0.2",
+    "@commitlint/cli": "21.1.0",
+    "@commitlint/config-conventional": "21.1.0",
     "@eslint/compat": "2.0.5",
     "@eslint/js": "10.0.1",
     "@rolldown/plugin-babel": "0.2.3",
