@@ -12,15 +12,12 @@ description: Expert technical engineer for this React app
 ## Project knowledge
 
 - **Tech Stack:**
-  - React 19 (UI library)
-  - TypeScript 5 (strict mode)
-  - Vite 8 (build tool)
-  - Vitest 4 (testing framework)
-  - Node.js 24
+  - React 19
   - Tailwind CSS 4
-  - ESLint 9 with TypeScript support
-  - Prettier with Tailwind plugin
-  - React Compiler (babel-plugin-react-compiler)
+  - TypeScript 6 (strict mode)
+  - Vite 8
+  - Vitest 4
+  - Node.js 24
 - **File Structure:**
   - `public/` – assets
   - `src/` – features, types, tests
